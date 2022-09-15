@@ -9,8 +9,8 @@ onready var Explosion = load("res://Effects/Explosion.tscn")
 
 func _physics_process(_delta):
 	position += velocity
-	position.x = wrapf(position.x,0,1024)
-	position.y = wrapf(position.y,0,1024)
+	position.x = wrapf(position.x,0,Global.VP.x)
+	position.y = wrapf(position.y,0,Global.VP.y)
 
 func damage(d):
 	health -= d
@@ -20,4 +20,5 @@ func damage(d):
 			var explosion = Explosion.instance()
 			Effects.add_child(explosion)
 			explosion.global_position = global_position
+			Global.update_score(200)
 		queue_free()

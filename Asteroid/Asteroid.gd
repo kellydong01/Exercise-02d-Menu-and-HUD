@@ -13,8 +13,8 @@ func _ready():
 
 func _physics_process(_delta):
 	position = position + velocity
-	position.x = wrapf(position.x, 0, 1024)
-	position.y = wrapf(position.y, 0, 600)
+	position.x = wrapf(position.x, 0, Global.VP.x)
+	position.y = wrapf(position.y, 0, Global.VP.y)
 
 
 func damage(d):
@@ -30,4 +30,5 @@ func damage(d):
 				Asteroid_Container.call_deferred("add_child", asteroid_small)
 				asteroid_small.position = position + s.rotated(dir)
 				asteroid_small.velocity = i
+				Global.update_score(100)
 		queue_free()

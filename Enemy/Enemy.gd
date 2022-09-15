@@ -31,6 +31,7 @@ func damage(d):
 			var explosion = Explosion.instance()
 			Effects.add_child(explosion)
 			explosion.global_position = global_position
+			Global.update_score(500)
 		queue_free()
 
 
