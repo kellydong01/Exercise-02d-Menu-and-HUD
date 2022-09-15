@@ -23,5 +23,5 @@ None
 Advanced features?
 
 ## Created by
-Jason Francis
+Kelly Dong
 ```
